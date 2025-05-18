@@ -1,15 +1,19 @@
 # Approach 2: Two-Pass Linear Search
-def getSecondLargest(arr):
-  n = len(arr)
-  largest = -1
-  secondLargest = -1
-  for i in range(n):
-    if num > largest:
-      largest = num
-  for i in range(n):
-    if num > secondLargest and num != largest:
-      secondLargest = num
-  return secondLargest
-
+class Solution:
+    def getSecondLargest(self, arr):
+        n = len(arr)
+        if n<2:
+            return -1
+        largest = secondlargest = float('-inf')
+        for i in range(n):
+            if arr[i] > largest:
+                secondlargest = largest
+                largest = arr[i]
+            elif arr[i] < largest and arr[i] > secondlargest:
+                secondlargest = arr[i]
+        if secondlargest == float('-inf'):
+            return -1
+        else:
+            return secondlargest        
 # Example:
 print(getSecondLargest([10, 5, 10]))  # 5
