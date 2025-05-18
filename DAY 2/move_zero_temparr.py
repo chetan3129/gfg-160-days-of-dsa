@@ -9,6 +9,3 @@ def pushZerosToEnd(arr):
   for i in range(n):
     arr[i] = temp[i]
   return arr
-if __name__ == "__main__":
-  arr = [1, 2, 0, 4, 3, 0, 5, 0]
-  print(move(arr)) # output [1, 2, 4, 3, 5, 0, 0, 0]
